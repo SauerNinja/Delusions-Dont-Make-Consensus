@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delusions Don't Make Consensus — When Conviction Outruns Its Backing</title>
+<meta name="description" content="When a Bitcoin proposal called BIP-110 failed to gain support, some of its backers turned to intimidation instead of evidence. This piece uses that failure, alongside Jefferson and Monroe, to examine a simple but overlooked pattern: expertise never protects anyone from conviction outrunning what actually backs it.">
+<meta name="keywords" content="delusion, consensus, Jefferson, Monroe, BIP-110, Bitcoin, echo chambers, cognitive dissonance, conviction, epistemics, groupthink, Bitcoin Knots, soft fork governance">
+<meta name="author" content="Setvin Noether">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://sauerninja.github.io/Delusions-Dont-Make-Consensus/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Delusions Don't Make Consensus">
+<meta property="og:description" content="When a Bitcoin proposal called BIP-110 failed to gain support, some of its backers turned to intimidation instead of evidence. This piece uses that failure, alongside Jefferson and Monroe, to examine a simple but overlooked pattern: expertise never protects anyone from conviction outrunning what actually backs it.">
+<meta property="og:image" content="https://sauerninja.github.io/Delusions-Dont-Make-Consensus/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A wilted rose with petals colored in Bitcoin's signature orange">
+<meta property="og:url" content="https://sauerninja.github.io/Delusions-Dont-Make-Consensus/">
+<meta property="og:site_name" content="Delusions Don't Make Consensus">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-11T00:00:00+00:00">
+<meta property="article:author" content="Setvin Noether">
+<meta property="article:section" content="Governance &amp; Epistemics">
+<meta property="article:tag" content="BIP-110">
+<meta property="article:tag" content="Bitcoin">
+<meta property="article:tag" content="Echo Chambers">
+<meta property="article:tag" content="Jefferson">
+<meta property="article:tag" content="Monroe">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Delusions Don't Make Consensus">
+<meta name="twitter:description" content="When a Bitcoin proposal called BIP-110 failed to gain support, some of its backers turned to intimidation instead of evidence. Jefferson, Monroe, and a two-hundred-year-old pattern of conviction outrunning its backing.">
+<meta name="twitter:image" content="https://sauerninja.github.io/Delusions-Dont-Make-Consensus/og-image.png">
+<meta name="twitter:image:alt" content="A wilted rose with petals colored in Bitcoin's signature orange">
+<meta name="twitter:creator" content="@SauerNinja">
+
+
+<!-- Favicons -->
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#14110D">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Delusions Don't Make Consensus",
+  "alternativeHeadline": "Why expertise doesn't stop conviction from outrunning its backing",
+  "description": "When a Bitcoin proposal called BIP-110 failed to gain support, some of its backers turned to intimidation instead of evidence. This piece uses that failure, alongside Jefferson and Monroe, to examine a simple but overlooked pattern: expertise never protects anyone from conviction outrunning what actually backs it.",
+  "author": {
+    "@type": "Person",
+    "name": "Setvin Noether",
+    "url": "https://github.com/SauerNinja"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "SauerNinja",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sauerninja.github.io/Delusions-Dont-Make-Consensus/favicon-512.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "datePublished": "2026-08-11",
+  "dateModified": "2026-08-11",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://sauerninja.github.io/Delusions-Dont-Make-Consensus/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://sauerninja.github.io/Delusions-Dont-Make-Consensus/"
+  },
+  "inLanguage": "en-US",
+  "articleSection": "Governance, Epistemics, Bitcoin",
+  "about": [
+    { "@type": "Thing", "name": "Cognitive bias" },
+    { "@type": "Thing", "name": "Bitcoin governance" },
+    { "@type": "Thing", "name": "Jefferson and Monroe historical analysis" }
+  ],
+  "keywords": "delusion, consensus, Jefferson, Monroe, BIP-110, Bitcoin, echo chambers, cognitive dissonance, conviction, epistemics, groupthink"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What was Bitcoin's BIP-110 proposal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BIP-110 was a temporary Bitcoin soft fork proposal that would have restricted arbitrary non-financial data in transactions for about one year. It required 55% miner signaling to activate but peaked at 2.53%, triggering a minority chain split that stalled after two blocks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did BIP-110 fail?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BIP-110 failed because it never secured broad economic backing. Miner signaling peaked at 2.53% against a 55% threshold, and the resulting minority chain inherited Bitcoin's full mining difficulty while holding roughly 0.15% of network hashpower, making it unable to produce blocks at a viable pace."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does BIP-110 have to do with Thomas Jefferson and James Monroe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jefferson's agrarian ideals and Monroe's Doctrine are both historical cases of genuine expertise declaring a conviction as though the backing for it already existed, when the actual support was thin or borrowed. BIP-110's 55% activation threshold, met with 2.53% signaling, follows the same pattern: conviction announced ahead of the consensus needed to sustain it."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Delusions Don't Make Consensus",
+      "item": "https://sauerninja.github.io/Delusions-Dont-Make-Consensus/"
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #14110D;
+    --bg-raised: #1C1710;
+    --bg-card: #211A11;
+    --line: #34291A;
+    --line-soft: #241D13;
+    --text: #EDE6DA;
+    --text-dim: #A99B85;
+    --text-faint: #756A57;
+    --orange: #F7931A;
+    --orange-bright: #FBB040;
+    --rust: #8A3E10;
+    --rust-deep: #5C2A0C;
+    --sage: #6B7A45;
+    --serif-display: 'Fraunces', Georgia, serif;
+    --serif-body: 'Source Serif 4', Georgia, serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif-body);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--orange); text-decoration-color: rgba(247,147,26,0.35); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--orange); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- NAV ---------- */
+  nav.top {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(20,17,13,0.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  nav.top .inner {
+    max-width: 760px; margin: 0 auto; padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  nav.top .brand {
+    font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em;
+    color: var(--text-dim); text-decoration: none; text-transform: uppercase;
+  }
+  nav.top .brand strong { color: var(--orange); }
+  nav.top .rose-mark { width: 18px; height: 18px; vertical-align: -3px; margin-right: 8px; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    padding: 64px 28px 40px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero-img-wrap { max-width: 300px; margin: 0 auto 8px; }
+  .hero-img-wrap img { width: 100%; height: auto; display: block; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--orange); margin: 6px 0 18px;
+  }
+  h1.title {
+    font-family: var(--serif-display);
+    font-weight: 700;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    line-height: 1.06;
+    margin: 0 0 20px;
+    color: var(--text);
+  }
+  h1.title em { font-style: italic; font-weight: 500; color: var(--orange-bright); }
+  .dek {
+    font-family: var(--serif-body); font-style: italic;
+    font-size: 1.25rem; color: var(--text-dim);
+    max-width: 560px; margin: 0 auto 28px; line-height: 1.55;
+  }
+  .byline {
+    font-family: var(--mono); font-size: 12.5px; color: var(--text-faint);
+    letter-spacing: 0.03em;
+  }
+  .byline .dot { margin: 0 8px; opacity: 0.5; }
+
+  /* ---------- ARTICLE BODY ---------- */
+  article { padding: 20px 0 40px; }
+  section.block { padding: 46px 0; border-top: 1px solid var(--line-soft); }
+  section.block:first-of-type { border-top: none; padding-top: 12px; }
+
+  h2 {
+    font-family: var(--serif-display); font-weight: 600;
+    font-size: clamp(1.5rem, 3.4vw, 2rem);
+    color: var(--text); margin: 0 0 18px; line-height: 1.2;
+  }
+  h2 .num { font-family: var(--mono); font-size: 0.55em; color: var(--orange); display: block; letter-spacing: 0.12em; margin-bottom: 10px; font-weight: 500; }
+
+  h3 {
+    font-family: var(--serif-display); font-weight: 600; font-size: 1.2rem;
+    color: var(--orange-bright); margin: 30px 0 10px;
+  }
+
+  p { margin: 0 0 18px; color: var(--text); }
+  p.lead { font-size: 1.15rem; color: var(--text); }
+  strong { color: var(--orange-bright); font-weight: 600; }
+
+  ul, ol { padding-left: 22px; margin: 0 0 18px; }
+  li { margin-bottom: 8px; }
+
+  /* pull quote for admissions */
+  .admission {
+    margin: 28px 0; padding: 22px 24px;
+    background: linear-gradient(135deg, rgba(247,147,26,0.09), rgba(90,42,12,0.06));
+    border-left: 3px solid var(--orange);
+    border-radius: 2px;
+  }
+  .admission p { margin: 0; font-style: italic; font-size: 1.08rem; color: var(--text); }
+  .admission .label { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange); margin-bottom: 8px; display: block; font-style: normal; }
+
+  /* quote cards */
+  .quote-card {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: 6px; padding: 20px 22px; margin: 18px 0;
+  }
+  .quote-card blockquote {
+    margin: 0 0 10px; font-family: var(--serif-body); font-style: italic;
+    font-size: 1.05rem; color: var(--text); line-height: 1.5;
+  }
+  .quote-card cite {
+    font-family: var(--mono); font-style: normal; font-size: 12.5px;
+    color: var(--text-dim); display: block;
+  }
+  .quote-card cite .who { color: var(--orange); font-weight: 500; }
+
+  /* data stat row */
+  .stat-row { display: flex; flex-wrap: wrap; gap: 14px; margin: 24px 0; }
+  .stat {
+    flex: 1 1 140px; background: var(--bg-raised); border: 1px solid var(--line);
+    border-radius: 6px; padding: 16px 18px;
+  }
+  .stat .n { font-family: var(--mono); font-size: 1.6rem; color: var(--orange); font-weight: 600; display: block; }
+  .stat .l { font-family: var(--mono); font-size: 11.5px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
+
+  /* timeline */
+  .timeline { border-left: 2px solid var(--line); margin: 24px 0 24px 6px; padding-left: 26px; }
+  .t-item { position: relative; padding-bottom: 26px; }
+  .t-item:last-child { padding-bottom: 0; }
+  .t-item::before {
+    content: ''; position: absolute; left: -32px; top: 4px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--orange); border: 2px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--line);
+  }
+  .t-date { font-family: var(--mono); font-size: 12px; color: var(--orange); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px; }
+  .t-item p { margin: 0; font-size: 0.98rem; color: var(--text-dim); }
+  .t-item p strong { color: var(--text); }
+
+  /* where i was wrong list */
+  .flaw-list { list-style: none; padding: 0; margin: 24px 0; }
+  .flaw-list li {
+    display: grid; grid-template-columns: 28px 1fr; gap: 14px;
+    padding: 16px 0; border-bottom: 1px solid var(--line-soft);
+  }
+  .flaw-list li:last-child { border-bottom: none; }
+  .flaw-list .mark { font-family: var(--mono); color: var(--rust); font-size: 20px; line-height: 1.4; }
+  .flaw-list h4 { margin: 0 0 6px; font-family: var(--serif-display); font-weight: 600; font-size: 1.05rem; color: var(--text); }
+  .flaw-list p { margin: 0; font-size: 0.98rem; color: var(--text-dim); }
+
+  /* footer / sources */
+  .chart-card {
+    background: var(--bg-raised); border: 1px solid var(--line);
+    border-radius: 8px; padding: 22px 24px 18px; margin: 26px 0;
+  }
+  .chart-card .chart-title {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text-dim); margin-bottom: 14px;
+  }
+  .chart-card svg { width: 100%; height: auto; display: block; }
+  .chart-card .chart-caption {
+    font-family: var(--mono); font-size: 11px; color: var(--text-faint);
+    margin-top: 10px; line-height: 1.5;
+  }
+
+  .sources { padding: 46px 0 70px; border-top: 1px solid var(--line-soft); }
+  .petal-bloom { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 6px 0 30px; }
+  .petal-bloom svg { width: 30px; height: 30px; }
+  .petal-bloom .stem-line { flex: 1; max-width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--line) 30%, var(--line) 70%, transparent); }
+
+  .petal-group { margin-bottom: 22px; }
+  .petal-group h4 {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--serif-display); font-weight: 600; font-size: 1rem;
+    color: var(--orange-bright); margin: 0 0 12px;
+  }
+  .petal-group h4 svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .petal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
+  .petal-item {
+    font-size: 0.88rem; line-height: 1.4; padding: 6px 0 6px 14px;
+    border-left: 2px solid var(--line); color: var(--text-dim);
+  }
+  .petal-item .pt { color: var(--text); }
+  .petal-item .pd { font-family: var(--mono); font-size: 10.5px; color: var(--text-faint); display: block; margin-top: 1px; }
+  @media (max-width: 640px) { .petal-grid { grid-template-columns: 1fr; } }
+
+
+
+  footer.site {
+    padding: 40px 28px 60px; text-align: center;
+    font-family: var(--mono); font-size: 12px; color: var(--text-faint);
+    border-top: 1px solid var(--line-soft);
+  }
+  footer.site a { color: var(--text-dim); }
+  footer.site .rose-mark { width: 22px; opacity: 0.6; margin-bottom: 14px; }
+
+  /* small wilted rose divider used between sections */
+  .divider { display: flex; align-items: center; justify-content: center; margin: 6px 0 34px; opacity: 0.55; }
+  .divider svg { width: 26px; height: 26px; }
+  .divider .line { flex: 1; height: 1px; background: var(--line); max-width: 90px; }
+  .divider .line + svg, .divider svg + .line { margin: 0 14px; }
+
+  @media (max-width: 600px) {
+    body { font-size: 16.5px; }
+    .wrap { padding: 0 20px; }
+    .hero { padding: 48px 20px 30px; }
+    .stat-row { gap: 10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="#top">
+      <svg class="rose-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#1C1710"/>
+        <path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#F7931A"/>
+        <path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#B85C14"/>
+      </svg><strong>Delusions</strong> Don't Make Consensus
+    </a>
+    <a class="brand" href="#sources">Sources ↓</a>
+  </div>
+</nav>
+
+<div id="top" class="hero">
+  <div class="hero-img-wrap">
+    <img src="rose-hero.svg" alt="A wilted rose illustration with petals colored in Bitcoin's signature orange, drooping on a dried stem" width="300" height="366">
+  </div>
+  <p class="eyebrow">A retraction</p>
+  <h1 class="title">Delusions Don't<br>Make <em>Consensus</em></h1>
+  <p class="dek">Plenty of people who genuinely understand Bitcoin's code still supported BIP-110. That's the part worth sitting with — delusion isn't a knowledge gap. It's a pattern that catches experts and non-experts alike, and it has a name in American history too: Jefferson and Monroe.</p>
+  <p class="byline">Setvin Noether <span class="dot">·</span> August 11, 2026 <span class="dot">·</span> 14 min read</p>
+</div>
+
+<article class="wrap">
+
+  <section class="block">
+    <p class="lead">It would be convenient if BIP-110's support base broke cleanly along technical lines — people who understood the code opposing it, people who didn't understand it supporting it. That's not what happened. Plenty of BIP-110's supporters could read the diff, evaluate the script-depth restrictions, and argue the node-storage grievance on its technical merits. Some of them still hold that BIP-110 was the right call, or at least a defensible one, even after the stall. Technical fluency didn't inoculate anyone against the pattern this piece is actually about, and pretending otherwise would be a more comfortable story than the true one.</p>
+    <p>The true one is this: conviction can outrun its backing regardless of how much someone knows. Bitcoin was being treated, in this telling, as a dumping ground for arbitrary data; node operators were footing the storage bill forever for a fee miners collected once; a temporary rule change looked like a reasonable way to push back. That argument had real technical substance behind at least part of it. What it didn't have was 55% miner signaling, and somewhere between the argument's substance and its declared confidence, a gap opened up that no amount of code review closes. That gap — between what a position has earned and how certain its holders act — is the actual subject here, and Bitcoin coders are not exempt from it any more than anyone else is.</p>
+  </section>
+
+  <div class="divider"><span class="line"></span>
+    <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#8A3E10"/><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#F7931A"/></svg>
+    <span class="line"></span></div>
+
+  <section class="block">
+    <h2><span class="num">01 — A pattern with a two-hundred-year-old precedent</span>Jefferson, Monroe, and how conviction gets ahead of itself</h2>
+    <p>Jefferson's Yeoman Farmer ideal ran on faith that an agrarian republic could out-argue the economic machinery Hamilton was actually building. Jefferson wasn't uninformed — he was one of the most well-read men of his era, fluent in finance, law, and political theory. He still spent decades certain that a nation of independent farmers could out-compete a nation built on banks and manufacturing, and the republic ended up running on the financial system he distrusted anyway. Monroe's Doctrine declared the entire Western Hemisphere off-limits to European powers with a navy too small to enforce a fraction of that claim. Monroe had been a soldier, a diplomat, a two-term president — someone who understood power about as well as anyone in the country. He still declared a policy the United States had no way to back up, and it only held because it happened to line up with what the British Royal Navy wanted anyway.</p>
+    <p>Neither man was unsophisticated. Both were about as expert in their domains as it was possible to be in 1800s America. And both still ended up declaring a conviction as if the backing for it already existed, when the backing was thin or borrowed from somewhere else entirely. That's the actual mechanism worth naming: expertise raises the quality of the argument someone can make, but it does nothing to guarantee that their certainty will track how much support the argument actually has. BIP-110's 55% threshold, met with 2.53% signaling from what turned out to be effectively one pool, is the same shape. Knowing Bitcoin's codebase in detail didn't stop some of its most technically fluent supporters from acting as though the numbers would eventually catch up to the conviction, rather than the other way around.</p>
+  </section>
+
+  <div class="divider"><span class="line"></span>
+    <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#8A3E10"/><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#F7931A"/></svg>
+    <span class="line"></span></div>
+
+  <section class="block">
+    <h2><span class="num">02 — What actually happened</span>The numbers, as plainly as they can be put</h2>
+    <p>The technical debate about script restrictions and data storage is genuinely contested and worth taking seriously on its own terms — that's not what this piece is relitigating. What follows is what's actually documented and verifiable about how the fork played out, because that part isn't in dispute by anyone, including BIP-110's own supporters.</p>
+
+    <div class="stat-row">
+      <div class="stat"><span class="n">2.53%</span><span class="l">Miner signaling reached</span></div>
+      <div class="stat"><span class="n">55%</span><span class="l">Threshold required</span></div>
+      <div class="stat"><span class="n">2</span><span class="l">Blocks mined on the fork</span></div>
+      <div class="stat"><span class="n">99.85%</span><span class="l">Hashpower that stayed put</span></div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Miner signaling vs. activation threshold</div>
+      <svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart comparing 2.53 percent miner signaling reached against the 55 percent threshold required for activation">
+        <line x1="130" y1="20" x2="130" y2="140" stroke="#34291A" stroke-width="1"/>
+        <line x1="130" y1="140" x2="600" y2="140" stroke="#34291A" stroke-width="1"/>
+        <text x="120" y="55" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" fill="#A99B85">Required</text>
+        <rect x="134" y="38" width="431" height="28" rx="3" fill="#34291A"/>
+        <text x="575" y="57" font-family="IBM Plex Mono, monospace" font-size="13" fill="#EDE6DA" font-weight="600">55%</text>
+        <text x="120" y="115" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" fill="#A99B85">Reached</text>
+        <rect x="134" y="98" width="20" height="28" rx="3" fill="#F7931A"/>
+        <text x="165" y="117" font-family="IBM Plex Mono, monospace" font-size="13" fill="#F7931A" font-weight="600">2.53%</text>
+      </svg>
+      <div class="chart-caption">Bar widths to scale. 431px = 55%, 20px = 2.53% — the sliver of orange is the entire signaling effort at its peak.</div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-title">Block height: main chain vs. BIP-110 chain, Aug 8–11</div>
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line chart showing the main Bitcoin chain climbing steadily while the BIP-110 chain flatlines after two blocks">
+        <line x1="50" y1="20" x2="50" y2="180" stroke="#34291A" stroke-width="1"/>
+        <line x1="50" y1="180" x2="600" y2="180" stroke="#34291A" stroke-width="1"/>
+        <text x="45" y="30" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#756A57">+120</text>
+        <text x="45" y="105" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#756A57">+60</text>
+        <text x="45" y="178" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#756A57">961,632</text>
+        <polyline points="50,180 150,150 250,120 350,90 450,60 550,32" fill="none" stroke="#F7931A" stroke-width="2.5"/>
+        <circle cx="550" cy="32" r="4" fill="#F7931A"/>
+        <text x="558" y="30" font-family="IBM Plex Mono, monospace" font-size="11" fill="#F7931A">main chain</text>
+        <polyline points="50,180 90,168 130,164 600,164" fill="none" stroke="#5C2A0C" stroke-width="2.5"/>
+        <circle cx="130" cy="164" r="4" fill="#5C2A0C"/>
+        <text x="140" y="178" font-family="IBM Plex Mono, monospace" font-size="11" fill="#B85C14">BIP-110 chain — stalled at 961,633</text>
+        <text x="50" y="196" font-family="IBM Plex Mono, monospace" font-size="10" fill="#756A57">Sat Aug 8</text>
+        <text x="560" y="196" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#756A57">Tue Aug 11</text>
+      </svg>
+      <div class="chart-caption">Not to precise scale — illustrates the shape of the divergence: two blocks, then flat, while the main chain kept its normal ten-minute pace.</div>
+    </div>
+
+    <p>The gap didn't stay static, either. In the hours after the split, the minority chain's next difficulty adjustment was estimated at roughly 350 days out, against 14 days for the main chain. By the time the dust settled a few days later, that estimate had stretched to 6.3 years — a number recalculated continuously from actual block times, meaning every additional idle hour pushed it further away rather than closer. A chain that can't lower its own mining difficulty without first surviving the wait it doesn't have the hashpower to survive isn't in a slow recovery. It's in a mechanism that gets worse the longer it goes unaddressed.</p>
+
+    <div class="chart-card">
+      <div class="chart-title">Estimated time to the fork's first difficulty adjustment</div>
+      <svg viewBox="0 0 640 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram showing the estimated wait for the BIP-110 chain's difficulty adjustment growing from 14 days for the main chain, to 350 days shortly after the split, to 6.3 years days later">
+        <line x1="30" y1="70" x2="610" y2="70" stroke="#34291A" stroke-width="1.5"/>
+        <circle cx="60" cy="70" r="6" fill="#F7931A"/>
+        <text x="60" y="45" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#F7931A" font-weight="600">14 days</text>
+        <text x="60" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#756A57">main chain</text>
+        <circle cx="320" cy="70" r="7" fill="#B85C14"/>
+        <text x="320" y="45" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#B85C14" font-weight="600">350 days</text>
+        <text x="320" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#756A57">BIP-110, hours after split</text>
+        <circle cx="580" cy="70" r="9" fill="#5C2A0C"/>
+        <text x="580" y="45" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#5C2A0C" font-weight="700">6.3 years</text>
+        <text x="580" y="95" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#756A57">BIP-110, days later</text>
+        <path d="M 70 70 L 310 70" stroke="#34291A" stroke-width="1" stroke-dasharray="3,4" marker-end="url(#arrow1)"/>
+        <path d="M 330 70 L 570 70" stroke="#34291A" stroke-width="1" stroke-dasharray="3,4" marker-end="url(#arrow1)"/>
+        <defs>
+          <marker id="arrow1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#5C2A0C"/></marker>
+        </defs>
+      </svg>
+      <div class="chart-caption">The wait grows the longer the chain sits idle — this isn't a fixed countdown, it's recalculated from actual block times.</div>
+    </div>
+
+    <p>Worth sitting with too: the 2.53% wasn't spread across the mining industry. Every signaling block in the final voluntary period came from a single pool, Ocean, which had switched to signaling by default on July 15 — and reverted back to non-signaling as its own default just a day after the fork stalled. AntPool and F2Pool each mined a non-signaling block during the mandatory window specifically to demonstrate their position. Foundry USA ran an internal hashrate-weighted vote and never published a result or signaled either way. Once the mandatory window opened, signaling on the dominant chain dropped to 0.00% — not low, zero. What briefly looked like a contested 2.53% was, structurally, one pool's policy default being read as an industry position.</p>
+
+    <h3>Why 2017 worked and this didn't.</h3>
+    <p>BIP-110's authors explicitly modeled it on BIP 148, the 2017 User Activated Soft Fork that forced miners to activate SegWit. It's worth being specific about why that one actually worked, because BIP-110 skipped the part that mattered: by the time BIP 148 threatened to go live, major exchanges, wallet providers, and Bitcoin-accepting businesses had already credibly aligned behind SegWit, so miners faced a real threat of mining blocks the rest of the economy simply wouldn't price. That's what forced the capitulation — not the node software, the economic backing behind it. BIP-110 never built that alignment. Inscription-type transactions have been generating competitive fee revenue for pools since 2023, giving miners a financial reason to stay put, and no exchange or custodian ever signaled it would treat a BIP-110 chain as anything other than noise.</p>
+    <p>That showed up concretely: Coinbase and Kraken's public status feeds reported normal Bitcoin operations straight through the split, with no special handling announced. BlackRock's IBIT prospectus — like those of other major spot-ETF issuers — states the trust permanently and irrevocably abandons any claim to forked or airdropped assets, meaning ETF holders were never going to receive BIP-110 coins even if the chain had survived. Compare that to 2017, when exchanges published detailed splitting instructions and prepared new trading pairs well ahead of the Bitcoin Cash fork. The silence this time wasn't an oversight. It was the market declining to treat the event as one that needed a response.</p>
+
+    <h3>The restrictions could reportedly be routed around anyway.</h3>
+    <p>Independent of the signaling math, developer Martin Habovštiak demonstrated that arbitrary data could still be embedded on-chain in a way that avoided both OP_RETURN and Taproot — the very methods BIP-110 targeted — and that anyone could verify the bytes with standard node commands. If the restrictions can be bypassed by a single developer demonstrating the technique once, the case for accepting the governance risk of a contentious rule change gets considerably harder to make, regardless of how legitimate the underlying storage grievance was.</p>
+
+    <h3>Even sympathetic voices thought the tactics went too far.</h3>
+    <p>Samson Mow, who has said directly that he shares the concern about blockchain spam, opposed BIP-110 specifically over the lack of broad consensus — and modeled a "1% attack" scenario in which renting enough hashpower and running a few thousand cheap nodes could simulate a level of support the movement never organically had. He later wrote a viral piece of satire, framed as a survivor's diary from a future where the BIP-110 chain still exists with only 83 remaining participants, anchoring every fictional detail to a real data point already on the record — Lopp's Sybil-node chart, the pseudonymous author's identity, the mechanics of how a single extra byte could break the whole scheme. It's a useful reminder that some of the sharpest critiques of the movement's tactics came from people who agreed with its stated goal.</p>
+
+    <div class="timeline">
+      <div class="t-item">
+        <span class="t-date">March 2026</span>
+        <p><strong>First signal.</strong> Ocean Pool mines the first block signaling support for BIP-110, becoming the fork's primary organized mining constituency.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-date">July 2026</span>
+        <p><strong>Public opposition mounts.</strong> Michael Saylor, Adam Back, Jameson Lopp, and PlanB all go public against the proposal. Jason Hughes of Ocean's own mining operation publishes a technical breakdown rejecting the strongest moral argument being made for it. F2Pool, one of the largest pools by hashrate, refuses to signal.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-date">Aug 7–8, 2026</span>
+        <p><strong>The window opens.</strong> The mandatory signaling period begins at block 961,632. Only 51 of 2,016 blocks in the prior period had signaled — 2.53%, far short of 55%.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-date">Aug 8, 2026</span>
+        <p><strong>The split.</strong> BIP-110 nodes reject a non-signaling block from AntPool. Ocean-aligned miners produce an alternate block at 961,632, then one more at 961,633. The breakaway chain inherits full network difficulty with a sliver of the hashpower.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-date">Aug 9–10, 2026</span>
+        <p><strong>The stall.</strong> The minority chain does not produce a third block. The main chain reaches 961,659 and beyond — 26 blocks ahead — while OCEAN's own dashboard keeps showing 961,633 as the latest block, days later.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-date">Aug 10, 2026</span>
+        <p><strong>Dashjr removed as BIP editor.</strong> Citing conflict of interest and out-of-band handling of the proposal, the remaining BIP editors revoke Luke Dashjr's repository permissions. BIP-110's status is separately moved to Closed via pull request #2245.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-date">Aug 11, 2026</span>
+        <p><strong>Aftermath.</strong> OCEAN's own BIP-110 dashboard still shows block 961,633 as the latest block, roughly 55–59 hours after it was mined. Proponents discuss a proof-of-work change to bypass the miners who wouldn't follow — which would functionally make BIP-110 a separate coin, not a Bitcoin fork.</p>
+      </div>
+    </div>
+
+    <p>None of that is technically complicated once it's laid out. It's just a difficulty adjustment doing what a difficulty adjustment does to a chain that doesn't have the hashpower to sustain it. That part is trustworthy because it's arithmetic, independently reported by outlets that otherwise disagreed with each other about everything else. What's harder to trust is any confident early read of what the humans involved were thinking — that part only became clear by watching the community, not the block explorer.</p>
+  </section>
+
+  <div class="divider"><span class="line"></span>
+    <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#8A3E10"/><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#F7931A"/></svg>
+    <span class="line"></span></div>
+
+  <section class="block">
+    <h2><span class="num">03 — What actually settles it</span>It wasn't the code. It was the behavior.</h2>
+    <p>To be precise about this, because it matters: this isn't a technical verdict. Whether BIP-110's design was genuinely bad engineering, versus a reasonable fix its critics were too quick to dismiss, is a real and contested question that deserves people who can actually read the script-depth argument and Jameson Lopp's warning about breaking BitVM-style contracts — and plenty of technically capable people land on different sides of it. What's easier to evaluate from outside the code is how the movement behaved once it started losing, using the same Jefferson-and-Monroe pattern already laid out: conviction that outran its backing, held onto anyway. That's the part that actually earns the word "delusional," and it doesn't require picking a side in the technical debate to see it.</p>
+
+    <ol class="flaw-list">
+      <li>
+        <span class="mark">✕</span>
+        <div>
+          <h4>The CSAM argument was baked into the proposal's own logic before it ever became a talking point</h4>
+          <p>Months before activation, Jameson Lopp predicted almost exactly what would happen: that some "last-ditch" supporter would put child sexual abuse material on-chain specifically to coerce miners and node operators through legal pressure, since an actual criminal would have no reason to broadcast evidence of a crime onto a permanent, public, radically unprivate ledger. What makes this worse than a prediction coming true is that the incentive structure was reportedly written into BIP-110's own early draft language: a version of the proposal's reasoning argued that a bad actor could put CSAM on-chain to force a reorg, and that doing so created "an economic incentive for onchain CSAM" under the rule as proposed — meaning the argument being used to justify the fork also described the exact attack the fork would make more attractive. Once signaling stalled out, proponents used the CSAM framing as a pressure tactic anyway. Ocean's own Jason Hughes publicly rejected it and pointed out BIP-110 didn't even remove the technical ability to store arbitrary data on-chain. That the tactic got deployed after someone predicted it, after someone inside the movement debunked it, and after it turns out to have been part of the proposal's own reasoning, is where this stops being a technical disagreement.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mark">✕</span>
+        <div>
+          <h4>Some of the loudest support wasn't people at all</h4>
+          <p>Jameson Lopp has said directly that a meaningful share of the online movement behind BIP-110 was manufactured — that he personally confronted and unmasked AI bots on both X and Nostr that were repeating BIP-110 talking points and running circular arguments to waste people's time. Separately, in March 2026, he flagged what looked like a Sybil-inflated surge in BIP-110-signaling node counts — a chart captioned "Spot the Sybil Attack," showing one actor potentially running thousands of cheap nodes to simulate broader support than actually existed. A movement that needs bots and inflated node counts to look bigger than it is has already told you something about how much real conviction is underneath it.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mark">✕</span>
+        <div>
+          <h4>The Flat Earth talk in the Knots Discord</h4>
+          <p>This is the detail that actually clinches it. A community organized around a fairly narrow technical dispute — how Bitcoin should handle non-payment data — drifted, in some of its channels, into entertaining Flat Earth arguments. That's not a subtle signal. It's a sign of a group that has stopped checking its beliefs against anything outside itself, on any subject, not just the one it originally formed around. Understanding BIP-110's code isn't required to recognize that pattern, because it isn't really about Bitcoin at all.</p>
+        </div>
+      </li>
+      <li>
+        <span class="mark">✕</span>
+        <div>
+          <h4>The refusal to accept 2.53% as an answer</h4>
+          <p>A healthy technical community loses arguments sometimes and updates. This one, when it lost, didn't treat 2.53% signaling as information — it treated it as an obstacle to route around, first by discussing a proof-of-work change that would let it abandon the miners entirely, then by continuing to defend the proposal's legitimacy after its own governance process had moved it to Closed status. That's the pattern that actually reads as delusional: not holding an unpopular technical opinion, which is fine, but being structurally unable to let evidence change the plan.</p>
+        </div>
+      </li>
+    </ol>
+
+    <div class="admission">
+      <span class="label">Where that leaves things</span>
+      <p>Whether BIP-110 was good code remains an open, technical question this piece isn't equipped to settle, and it's more honest to say that plainly than to fake a technical opinion that hasn't been earned. What's clearer is that a lot of the belief in BIP-110 formed by trusting a community instead of evaluating a specification, and that same community is what eventually showed, through its own behavior, that the trust wasn't well placed. That's a narrower, more honest claim than "BIP-110 was doomed from the start," and it's the one worth standing behind.</p>
+    </div>
+  </section>
+
+  <div class="divider"><span class="line"></span>
+    <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#8A3E10"/><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#F7931A"/></svg>
+    <span class="line"></span></div>
+
+  <section class="block">
+    <h2><span class="num">04 — In their own words</span>What the people actually involved said</h2>
+    <p>Re-reading the primary sources, rather than relying on general impressions of the community's mood, sharpens the picture. Here's a representative sample, on both sides of the argument.</p>
+
+    <div class="quote-card">
+      <blockquote>"They forked off and found out."</blockquote>
+      <cite><span class="who">Adam Back</span>, Blockstream CEO, on the chain split — genuinely one of the funniest lines to come out of the whole saga, and also not wrong. He'd spent months separately warning that BIP-110 risked setting a precedent for judging which scripts or use cases are "correct" on Bitcoin, so the joke landed with some weight behind it.</cite>
+    </div>
+
+    <div class="quote-card">
+      <blockquote>Proponents were, in his words, under the delusion that a "spam hostile narrative" alone would scare people away from behavior they disapproved of.</blockquote>
+      <cite><span class="who">Jameson Lopp</span>, "A Layman's Guide to BIP-110" — but Lopp's fuller argument wasn't that the underlying complaint about node storage was fake; it was that a consensus-layer rule couldn't solve what was, at root, a cultural disagreement, and that the same script-depth restrictions BIP-110 relied on could accidentally break unrelated things like BitVM-style smart contracts.</cite>
+    </div>
+
+    <div class="quote-card">
+      <blockquote>Do I want CSAM in the chain? Of course not — but declining to run BIP-110 doesn't make someone a supporter of it.</blockquote>
+      <cite><span class="who">Jason Hughes</span>, VP of Ocean Mining — notably, a supporter of the fork's underlying goal, rejecting his own side's most extreme talking point. He also pointed out, correctly, that BIP-110 didn't actually remove the technical ability to store arbitrary data on-chain, only restricted some methods of embedding it.</cite>
+    </div>
+
+    <div class="quote-card">
+      <blockquote>Publication on the BIP registry does not establish community consensus, and no formal body decides what Bitcoin users ultimately adopt.</blockquote>
+      <cite><span class="who">David "JoelKatz" Schwartz</span>, responding to a Bitcoin Knots warning that discouraged users from switching software after the fork was marked Closed — pushing back on rhetoric he felt crossed from disagreement into misleading users about what had actually happened.</cite>
+    </div>
+
+    <div class="quote-card">
+      <blockquote>Bitcoin worked exactly as designed. BIP-110 was free to fork, and the network was free not to follow.</blockquote>
+      <cite><span class="who">Michael Saylor</span>, Strategy co-founder, whose earlier essay against the proposal argued that suppressing demand for block space would hurt miner revenue right as block subsidies continue to halve — an argument about long-term security budget economics, not about the moral character of the people proposing it. Saylor separately calculated that at roughly 0.15% of network hashpower, the minority chain would take on the order of 25 years just to reach its first difficulty adjustment of 2,016 blocks.</cite>
+    </div>
+
+    <div class="quote-card">
+      <blockquote>Rejecting BIP110 is a contentious hardfork attempt. There is no consensus on rejecting BIP110.</blockquote>
+      <cite><span class="who">Luke Dashjr</span>, BIP-110's technical author, made this argument in July, before the fork — and kept defending it afterward, telling critics it was "too late to cancel BIP110." It's worth including because it shows his position wasn't naive about consensus; he was making a genuine, if contested, argument that the absence of consensus cut both ways. He was removed as a BIP editor days later over how he'd handled the proposal's assignment through the registry, not for holding this view.</cite>
+    </div>
+
+    <div class="quote-card">
+      <blockquote>The small block camp never had to coerce anyone to join. We just all "got it" and were confident in our position.</blockquote>
+      <cite><span class="who">Samson Mow</span>, JAN3 CEO, in an essay titled "The Bitcoin Alliance" — drawing a direct contrast with the 2015–2017 Blocksize Wars, which he'd lived through on the winning side, to argue that BIP-110's coercive tactics were a break from how Bitcoin's genuine consensus fights had worked before. Mow has said he shares the underlying concern about spam; his objection is specifically to the absence of broad backing.</cite>
+    </div>
+
+    <p>Reading these together, the disagreement was substantive and, on the technical merits, fairly one-sided against BIP-110. But it was an argument between people who mostly agreed on the problem — node storage costs are real, arbitrary data on-chain is a real design tension — and disagreed about the fix. That's a normal, healthy fight for an open protocol to have. It isn't a story about one side being sane and the other delusional. That story only gets earned once you look at what happened after the fight was lost.</p>
+  </section>
+
+  <div class="divider"><span class="line"></span>
+    <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#8A3E10"/><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#F7931A"/></svg>
+    <span class="line"></span></div>
+
+  <section class="block">
+    <h2><span class="num">05 — What kept happening</span>The fallout wasn't just technical either</h2>
+    <p>Two more things happened after the stall that reinforced the same pattern — that the real story here was institutional and behavioral, not a clean math problem.</p>
+
+    <h3>Luke Dashjr was removed as a BIP editor.</h3>
+    <p>On August 10, Bitcoin's remaining BIP editors revoked Luke Dashjr's repository permissions, deleting his name from BIP 3, the document that lists who is allowed to manage the proposal process. Fellow editor Olaoluwa Osuntokun wrote that Dashjr had used his editor position to fast-track BIP-110 by assigning it a number outside the normal process, calling it a conflict of interest. Bryan Bishop confirmed the change on the Bitcoin Development Mailing List; Bitcoin Core contributors Matt Corallo, Antoine Poinsot, and Anthony Towns, along with libsecp256k1 maintainer Jonas Nick, backed the removal. Dashjr rejected the characterization and called it an unauthorized abuse of power. Separately, he had argued in July that abandoning BIP-110 at that point would itself be "a contentious hardfork attempt," since in his view there was no consensus to reject it either.</p>
+    <p>Whether removing an editor without a written process was the right call is a governance question this piece isn't equipped to referee. What's clearer is simpler: even Bitcoin's own protocol-governance layer, widely assumed to be settled and procedural, turned out to have an undefined edge case that let one person push a controversial proposal through, with no formal way to undo it cleanly once it became a problem. Jameson Lopp pointed that gap out himself. It's a reminder that "Bitcoin's process" being solid was itself an assumption worth checking, not a given.</p>
+
+    <h3>No replay protection meant the risk didn't end when the chain stalled.</h3>
+    <p>BIP-110 shipped without replay protection, meaning a transaction signed on one chain could be valid on the other. Developer Kevin Loaec warned ahead of the split that holders who sold or moved "airdropped" fork coins risked inadvertently authorizing the same spend on the real Bitcoin chain — attackers could specifically target large holders, since a successful replay against them would pay off more. This is the part of the story that has nothing to do with belief or ideology at all: ordinary people who held no opinion whatsoever about BIP-110 were exposed to a real, concrete risk of losing real bitcoin, purely because the fork existed and shipped without a basic safety mechanism. Whatever else is true about the arguments on either side, that risk was avoidable and it fell on people who weren't part of the argument.</p>
+  </section>
+
+  <div class="divider"><span class="line"></span>
+    <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#8A3E10"/><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#F7931A"/></svg>
+    <span class="line"></span></div>
+
+  <section class="block">
+    <h2><span class="num">06 — What still holds up</span>Not everything about the original argument was baseless</h2>
+    <p>None of this is an argument for treating the original grievances as naive. A few things still seem right, and are worth standing behind:</p>
+    <h3>The underlying grievance about node storage was real.</h3>
+    <p>Even critics who thought BIP-110 was a bad and dangerous fix, like Jameson Lopp, didn't dispute that the storage asymmetry — miners paid once, node operators storing the data forever — is a genuine, long-standing tension in Bitcoin's design. That part of the argument was sound. What didn't follow from it was that the proposed fix was sound.</p>
+    <h3>The neutrality argument is a real and serious one.</h3>
+    <p>Saylor's and Back's core worry — that once a protocol's maintainers start ruling on which fee-paying transactions are "legitimate," there's no principled place to stop — is a genuine structural concern about censorship resistance, not just a rhetorical flourish deployed to win an argument.</p>
+    <h3>Echo chambers are a real mechanism, not just a slur.</h3>
+    <p>The psychological account — cognitive dissonance driving groups to double down rather than update when reality contradicts their narrative — is well-documented, and it's the specific, falsifiable thing that actually played out: not a general vibe, but the CSAM rhetoric, the Flat Earth talk, and the refusal to accept 2.53% as an answer, all in the same channels, in the same week.</p>
+  </section>
+
+  <div class="divider"><span class="line"></span>
+    <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#8A3E10"/><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#F7931A"/></svg>
+    <span class="line"></span></div>
+
+  <section class="block">
+    <h2><span class="num">07 — The actual takeaway</span>The code isn't the story here. The behavior is.</h2>
+    <p>This isn't a claim to have suddenly acquired the technical grounding to say BIP-110 was bad engineering — that would just be trading one kind of overconfidence for another. The narrower, honest claim is this: a lot of belief in BIP-110 formed by trusting the people around it rather than the specification itself, and the clearest signal that the trust was misplaced came from watching that same community turn on outsiders, entertain conspiracy theories unrelated to Bitcoin entirely, and refuse to treat its own failed signaling numbers as real information. That's not a verdict on the code. It's a verdict on what happens to a group of people once conviction stops being checked against anything outside itself.</p>
+    <p>The wilted rose above isn't decoration. It's the image that fits: something that looked, from a distance, like it was still standing — right up until you looked closely enough to see it wasn't going to recover. That's the Knots community by the time the Flat Earth talk showed up. It's also a fair picture of any belief, in any community, that's never been checked against anything outside itself.</p>
+  </section>
+
+</article>
+
+<div class="wrap">
+  <section class="sources" id="sources">
+    <h2 style="margin-bottom:6px; text-align:center;"><span class="num" style="display:block; text-align:center;">Sources</span>Where this wilted from</h2>
+    <p style="color:var(--text-dim); font-size:0.92rem; margin-bottom:10px; text-align:center;">55+ sources. Core figures — 2.53% signaling, the stall at 961,633, 99.85% hashpower on the main chain — are corroborated across nearly all of them.</p>
+
+    <div class="petal-bloom">
+      <span class="stem-line"></span>
+      <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#8A3E10"/><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#F7931A"/></svg>
+      <span class="stem-line"></span>
+    </div>
+
+    <div class="petal-group">
+      <h4><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#F7931A"/></svg>The stem — mechanics, timeline, the stall</h4>
+      <div class="petal-grid">
+        <div class="petal-item"><span class="pt">BIP-110: The BTC Fork That Mined Two Blocks and Failed</span><span class="pd">bit.com</span></div>
+        <div class="petal-item"><span class="pt">BIP-110 Fork Stalls At Two Blocks As Miners Refuse To Follow</span><span class="pd">bitcoinmagazine.com</span></div>
+        <div class="petal-item"><span class="pt">BIP-110 fork failed: what it means for Bitcoin governance</span><span class="pd">crypto.news</span></div>
+        <div class="petal-item"><span class="pt">Fork Fails as Mainnet Outpaces Minority Chain by 26 Blocks</span><span class="pd">kucoin.com</span></div>
+        <div class="petal-item"><span class="pt">Where Is Bitcoin's "Junk Data" Debate Headed?</span><span class="pd">wublock.substack.com</span></div>
+        <div class="petal-item"><span class="pt">BIP-110 failed: why did the alternative network mine only two blocks?</span><span class="pd">incrypted.com</span></div>
+        <div class="petal-item"><span class="pt">Fork Falters as 99.85% of Hashpower Stays on Main Chain</span><span class="pd">ccn.com</span></div>
+        <div class="petal-item"><span class="pt">Controversial Bitcoin Fork Mines Two Blocks, Then Stops</span><span class="pd">coindesk.com</span></div>
+        <div class="petal-item"><span class="pt">BIP-110 nodes fork from main chain after rejecting a block</span><span class="pd">cryptobriefing.com</span></div>
+        <div class="petal-item"><span class="pt">Split widens as fork freezes at 2 blocks, signaling hits 0.00%</span><span class="pd">crypto.news</span></div>
+        <div class="petal-item"><span class="pt">Why Has the Bitcoin Fork Stopped Producing Blocks?</span><span class="pd">coincentral.com</span></div>
+        <div class="petal-item"><span class="pt">Stalls at 2 Blocks as Bitcoin Miners Refuse to Follow</span><span class="pd">bitcoinseats.com</span></div>
+      </div>
+    </div>
+
+    <div class="petal-group">
+      <h4><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#B85C14"/></svg>The drooping — difficulty math &amp; who actually signaled</h4>
+      <div class="petal-grid">
+        <div class="petal-item"><span class="pt">Minority Chain Stalls Eight Hours After Split (350-day estimate)</span><span class="pd">coininsider.com</span></div>
+        <div class="petal-item"><span class="pt">300 Blocks Behind and Six Years From Fixing Itself</span><span class="pd">coindesk.com</span></div>
+        <div class="petal-item"><span class="pt">Enforcement Stalls as Miner Support Lags</span><span class="pd">kucoin.com</span></div>
+        <div class="petal-item"><span class="pt">Data-Limit Proposal and Why It Failed — Ocean as sole signaling pool</span><span class="pd">simplemining.io</span></div>
+        <div class="petal-item"><span class="pt">Fork Dead After Two Blocks as Support Hits 2.53%</span><span class="pd">thecurrencyanalytics.com</span></div>
+        <div class="petal-item"><span class="pt">Soft Fork Stalls at 2 Blocks — miner reimbursements</span><span class="pd">coin-turk.com</span></div>
+        <div class="petal-item"><span class="pt">Backers Plot Minority Chain's PoW Reset to "Fire" Miners</span><span class="pd">news.bitcoin.com</span></div>
+      </div>
+    </div>
+
+    <div class="petal-group">
+      <h4><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#5C2A0C"/></svg>The thorns — Dashjr's removal, replay risk, the movement itself</h4>
+      <div class="petal-grid">
+        <div class="petal-item"><span class="pt">BIP Editors Remove Luke Dashjr Two Days After the Stall</span><span class="pd">thedefiant.io</span></div>
+        <div class="petal-item"><span class="pt">Editor Murch Calls for Dashjr's Removal After Collapse</span><span class="pd">finance.biggo.com</span></div>
+        <div class="petal-item"><span class="pt">BIP editors remove Luke Dashjr after BIP 110</span><span class="pd">crypto.news</span></div>
+        <div class="petal-item"><span class="pt">Threatens PoW Hard Fork as BIP-110 Fails 55% Threshold</span><span class="pd">tftc.io</span></div>
+        <div class="petal-item"><span class="pt">Fork Is Back — backers want to replace the miners &amp; change PoW</span><span class="pd">cryptoslate.com</span></div>
+        <div class="petal-item"><span class="pt">Replay Attack Puts Holders at Risk Before Any Chain Split</span><span class="pd">thecurrencyanalytics.com</span></div>
+        <div class="petal-item"><span class="pt">Selling Fork Coins Could Trigger Replay Attacks, Developer Warns</span><span class="pd">blockchainreporter.net</span></div>
+        <div class="petal-item"><span class="pt">A Layman's Guide to BIP-110 — CSAM prediction, AI bots unmasked</span><span class="pd">blog.lopp.net</span></div>
+        <div class="petal-item"><span class="pt">Bitcoin's Sudden Node Surge May Be One Actor Posing as Thousands</span><span class="pd">cryptoslate.com</span></div>
+        <div class="petal-item"><span class="pt">The Reduced Data Soft Fork — draft's CSAM/reorg-incentive language</span><span class="pd">studyknots.com</span></div>
+      </div>
+    </div>
+
+    <div class="petal-group">
+      <h4><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#F7931A"/></svg>The argument itself — both sides, on the merits</h4>
+      <div class="petal-grid">
+        <div class="petal-item"><span class="pt">BIP-110 Could Split Bitcoin In New Soft Fork Fight: Lopp</span><span class="pd">bitcoinist.com</span></div>
+        <div class="petal-item"><span class="pt">The Case Against — Protecting Bitcoin's Neutrality</span><span class="pd">nobip110.com</span></div>
+        <div class="petal-item"><span class="pt">"110 Reasons BIP 110 Is a Bad Idea" — Michael Saylor</span><span class="pd">strategy.com</span></div>
+        <div class="petal-item"><span class="pt">Adam Back opposition coverage, on censorship precedent</span><span class="pd">mexc.com</span></div>
+        <div class="petal-item"><span class="pt">Jason Hughes: On Track To Fail As Signaling Stays Below 1%</span><span class="pd">bitcoinmagazine.com</span></div>
+        <div class="petal-item"><span class="pt">BIP-110 explained: Bitcoin split risk</span><span class="pd">ahoracrypto.com</span></div>
+        <div class="petal-item"><span class="pt">What Bitcoin's Latest Drama Means for Everyday Holders</span><span class="pd">sidehustlerich.com</span></div>
+        <div class="petal-item"><span class="pt">Supporters Weigh Replacing Minority Chain's Mining Algorithm</span><span class="pd">primexbt.com</span></div>
+        <div class="petal-item"><span class="pt">What Is BIP-110 and Why Is It Dividing the Bitcoin Community? — Mow's "Bitcoin Alliance" essay</span><span class="pd">decrypt.co</span></div>
+        <div class="petal-item"><span class="pt">Why Michael Saylor and Adam Back Oppose BIP-110 — Mow's "1% attack" scenario</span><span class="pd">forklog.com</span></div>
+        <div class="petal-item"><span class="pt">Samson Mow's Viral Satire Pictures a Chain With Just 83 Users</span><span class="pd">cryptotimes.io</span></div>
+      </div>
+    </div>
+
+    <div class="petal-group">
+      <h4><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#B85C14"/></svg>What the fork didn't get — exchanges, ETFs, and 2017</h4>
+      <div class="petal-grid">
+        <div class="petal-item"><span class="pt">Bitcoin Split Into Two Chains Overnight — Coinbase &amp; Kraken status feeds normal</span><span class="pd">cryptoslate.com</span></div>
+        <div class="petal-item"><span class="pt">Bitcoin Nears Chain Split as BIP-110 Rebels Defy Global Hashpower — exchange silence vs. 2017</span><span class="pd">cryptonews.net</span></div>
+        <div class="petal-item"><span class="pt">Soft Fork Is Dead — BlackRock IBIT prospectus abandons forked-asset claims</span><span class="pd">techtimes.com</span></div>
+        <div class="petal-item"><span class="pt">BIP-110: Bitcoin-Kettenspaltung trotz geringer Unterstützung — holder safety guidance</span><span class="pd">coincierge.de</span></div>
+      </div>
+    </div>
+
+    <div class="petal-group">
+      <h4><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#8A3E10"/></svg>The workaround — bypassing the restrictions</h4>
+      <div class="petal-grid">
+        <div class="petal-item"><span class="pt">A developer hid an image inside one Bitcoin transaction — bypassed every major filter</span><span class="pd">mexc.com</span></div>
+        <div class="petal-item"><span class="pt">Why Bitcoin's BIP-110 refuses to die despite near-zero miner support</span><span class="pd">coindesk.com</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="site">
+  <svg class="rose-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;margin:0 auto 14px;">
+    <path d="M35 30 C10 22 -5 45 5 65 C15 82 40 85 55 72 C35 68 22 52 30 34 Z" fill="#8A3E10"/>
+    <path d="M55 28 C80 18 95 42 85 62 C76 80 52 84 40 70 C58 65 68 48 62 30 Z" fill="#F7931A"/>
+  </svg>
+  <p>Delusions Don't Make Consensus — a retraction, published August 2026.</p>
+  <p><a href="https://github.com/SauerNinja" target="_blank" rel="noopener">More writing on GitHub →</a></p>
+</footer>
+
+</body>
+</html>

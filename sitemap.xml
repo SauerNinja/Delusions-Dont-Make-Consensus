@@ -7,12 +7,12 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://sauerninja.github.io/Delusions-Dont-Make-Consensus/og-image.png</image:loc>
+      <image:loc>https://sauerninja.github.io/Delusions-Dont-Make-Consensus/og-image-v2.png</image:loc>
       <image:title>Delusions Don't Make Consensus</image:title>
       <image:caption>A wilted rose with petals colored in Bitcoin's signature orange</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://sauerninja.github.io/Delusions-Dont-Make-Consensus/rose-hero.png</image:loc>
+      <image:loc>https://sauerninja.github.io/Delusions-Dont-Make-Consensus/rose-hero-v2.png</image:loc>
       <image:title>Wilted rose emoji, Bitcoin-orange petals</image:title>
     </image:image>
   </url>

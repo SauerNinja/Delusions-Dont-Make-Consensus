@@ -1,72 +1,73 @@
 <svg width="900" height="1100" viewBox="0 0 900 1100" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="petalGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FBB040"/>
-      <stop offset="45%" stop-color="#F7931A"/>
-      <stop offset="100%" stop-color="#8A3E10"/>
-    </linearGradient>
-    <linearGradient id="petalGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#F7931A"/>
-      <stop offset="55%" stop-color="#B85C14"/>
-      <stop offset="100%" stop-color="#5C2A0C"/>
-    </linearGradient>
-    <linearGradient id="petalGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#C96A16"/>
-      <stop offset="100%" stop-color="#4A2209"/>
-    </linearGradient>
+    <linearGradient id="gA" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FBB040"/><stop offset="50%" stop-color="#F7931A"/><stop offset="100%" stop-color="#8A3E10"/></linearGradient>
+<linearGradient id="gB" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F7931A"/><stop offset="50%" stop-color="#B85C14"/><stop offset="100%" stop-color="#5C2A0C"/></linearGradient>
+<linearGradient id="gC" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#C96A16"/><stop offset="50%" stop-color="#7A3B12"/><stop offset="100%" stop-color="#3A1B08"/></linearGradient>
+<linearGradient id="gD" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E8801A"/><stop offset="50%" stop-color="#9C4A0F"/><stop offset="100%" stop-color="#4A2209"/></linearGradient>
     <linearGradient id="stemGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#5C6B3E"/>
       <stop offset="100%" stop-color="#39421F"/>
     </linearGradient>
-    <radialGradient id="vign" cx="50%" cy="38%" r="65%">
+    <radialGradient id="vign" cx="50%" cy="35%" r="70%">
       <stop offset="0%" stop-color="#1C1710" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0E0B08" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0A0806" stop-opacity="0.6"/>
     </radialGradient>
   </defs>
 
+  <rect width="900" height="1100" fill="#14110D"/>
+
   <!-- stem, curved and drooping -->
-  <path d="M 460 260 C 430 420 380 560 340 680 C 300 800 250 900 205 1010"
-        fill="none" stroke="url(#stemGrad)" stroke-width="14" stroke-linecap="round"/>
-  <path d="M 460 260 C 430 420 380 560 340 680 C 300 800 250 900 205 1010"
+  <path d="M 460 240 C 430 420 380 560 340 680 C 300 800 250 900 205 1010"
+        fill="none" stroke="url(#stemGrad)" stroke-width="15" stroke-linecap="round"/>
+  <path d="M 460 240 C 430 420 380 560 340 680 C 300 800 250 900 205 1010"
         fill="none" stroke="#232917" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
 
   <!-- thorns -->
-  <path d="M 420 430 L 392 448 L 424 448 Z" fill="#3C4522"/>
-  <path d="M 372 610 L 342 622 L 376 630 Z" fill="#3C4522"/>
-  <path d="M 305 800 L 274 806 L 308 822 Z" fill="#3C4522"/>
+  <path d="M 418 470 L 388 488 L 422 488 Z" fill="#3C4522"/>
+  <path d="M 368 640 L 336 652 L 372 660 Z" fill="#3C4522"/>
+  <path d="M 300 820 L 268 826 L 304 842 Z" fill="#3C4522"/>
 
   <!-- dried leaves -->
-  <path d="M 400 520 C 350 505 310 520 288 555 C 320 560 365 555 400 520 Z" fill="#6B5A2E" opacity="0.85"/>
-  <path d="M 400 520 C 350 505 310 520 288 555" fill="none" stroke="#463A1D" stroke-width="2" opacity="0.7"/>
-  <path d="M 330 700 C 280 695 245 715 228 752 C 262 752 305 738 330 700 Z" fill="#5A4A22" opacity="0.85"/>
-  <path d="M 330 700 C 280 695 245 715 228 752" fill="none" stroke="#3C3018" stroke-width="2" opacity="0.7"/>
+  <path d="M 398 550 C 346 534 305 550 282 586 C 316 590 362 584 398 550 Z" fill="#6B5A2E" opacity="0.85"/>
+  <path d="M 398 550 C 346 534 305 550 282 586" fill="none" stroke="#463A1D" stroke-width="2" opacity="0.7"/>
+  <path d="M 326 730 C 275 724 240 745 222 782 C 257 782 300 767 326 730 Z" fill="#5A4A22" opacity="0.85"/>
+  <path d="M 326 730 C 275 724 240 745 222 782" fill="none" stroke="#3C3018" stroke-width="2" opacity="0.7"/>
 
   <!-- fallen petals near base -->
-  <ellipse cx="190" cy="1040" rx="26" ry="14" fill="url(#petalGradDark)" opacity="0.8" transform="rotate(-20 190 1040)"/>
-  <ellipse cx="150" cy="1060" rx="20" ry="11" fill="url(#petalGradDark)" opacity="0.7" transform="rotate(15 150 1060)"/>
+  <ellipse cx="185" cy="1045" rx="27" ry="14" fill="url(#gC)" opacity="0.8" transform="rotate(-20 185 1045)"/>
+  <ellipse cx="146" cy="1064" rx="20" ry="11" fill="url(#gD)" opacity="0.7" transform="rotate(15 146 1064)"/>
 
-  <!-- rose head: bowed forward, so we build it centered around ~500,190 tilted down -->
-  <g transform="translate(500,200) rotate(18)">
-    <!-- outer wilted petals, drooping and curled -->
-    <path d="M -20 -10 C -110 -30 -170 20 -175 90 C -170 150 -110 175 -50 160 C -80 130 -95 80 -80 30 C -70 -5 -45 -10 -20 -10 Z" fill="url(#petalGrad2)"/>
-    <path d="M 10 -20 C 90 -55 160 -25 180 40 C 195 100 155 145 95 145 C 120 105 125 55 100 15 C 80 -15 45 -22 10 -20 Z" fill="url(#petalGrad1)"/>
-    <path d="M -30 20 C -60 70 -55 130 -5 165 C 20 182 55 178 70 155 C 30 150 0 120 -5 75 C -8 50 -15 30 -30 20 Z" fill="url(#petalGradDark)"/>
+  <!-- calyx beneath bloom -->
+  <g transform="translate(455.4,255.0) rotate(55)" opacity="0.92"><path d="M 0 0 C -17.25 -12.6 -17.25 -43.4 0 -70.0 C 17.25 -43.4 17.25 -12.6 0 0 Z" fill="#4A5A2A"/></g>
+<g transform="translate(462.7,255.0) rotate(110)" opacity="0.92"><path d="M 0 0 C -14.95 -14.04 -14.95 -48.36 0 -78.0 C 14.95 -48.36 14.95 -14.04 0 0 Z" fill="#4A5A2A"/></g>
+<g transform="translate(466.6,255.0) rotate(145)" opacity="0.92"><path d="M 0 0 C -16.099999999999998 -11.7 -16.099999999999998 -40.3 0 -65.0 C 16.099999999999998 -40.3 16.099999999999998 -11.7 0 0 Z" fill="#4A5A2A"/></g>
 
-    <!-- mid petals curling inward, drooping down -->
-    <path d="M -5 -35 C -55 -35 -85 5 -80 55 C -76 95 -45 115 -5 105 C -35 85 -45 55 -35 25 C -28 5 -18 -15 -5 -35 Z" fill="url(#petalGrad1)"/>
-    <path d="M 15 -35 C 60 -40 90 -5 88 40 C 86 78 55 100 20 92 C 45 72 52 45 44 18 C 38 -2 28 -20 15 -35 Z" fill="url(#petalGrad2)"/>
-    <path d="M 0 10 C -20 40 -15 75 15 92 C 32 101 50 96 55 82 C 30 78 15 58 15 35 C 15 24 8 15 0 10 Z" fill="#7A3B12"/>
-
-    <!-- inner curled bud, tightest and darkest -->
-    <path d="M -8 -12 C -30 -8 -40 12 -30 32 C -22 48 -2 52 10 42 C -4 38 -12 24 -8 8 C -6 0 -2 -8 -8 -12 Z" fill="#5C2A0C"/>
-    <path d="M 6 -14 C 24 -16 36 -2 32 16 C 29 30 14 38 2 32 C 14 26 18 12 12 0 C 9 -6 2 -12 6 -14 Z" fill="#F7931A" opacity="0.9"/>
-    <circle cx="-2" cy="10" r="6" fill="#3A1B08"/>
-
-    <!-- calyx / sepals at base of bloom -->
-    <path d="M -30 60 C -45 90 -40 120 -15 135 C -25 105 -25 78 -10 55 Z" fill="#4A5A2A" opacity="0.9"/>
-    <path d="M 25 65 C 45 90 42 118 15 132 C 28 105 30 80 15 58 Z" fill="#39421F" opacity="0.9"/>
+  <!-- layered wilted bloom, head bowed forward -->
+  <g transform="rotate(18 460 210)">
+    <g transform="translate(467.5,204.0) rotate(169.5)" opacity="0.94"><path d="M 0 0 C -53.08268192454936 -26.299780365985647 -73.85416615589477 -90.58813237172834 0 -146.10989092214248 C 73.85416615589477 -90.58813237172834 53.08268192454936 -26.299780365985647 0 0 Z" fill="url(#gB)"/></g>
+<g transform="translate(468.7,214.0) rotate(231.9)" opacity="0.93"><path d="M 0 0 C -51.07764578198917 -25.71148118737254 -71.06455065320233 -88.5617685342832 0 -142.84156215206968 C 71.06455065320233 -88.5617685342832 51.07764578198917 -25.71148118737254 0 0 Z" fill="url(#gB)"/></g>
+<g transform="translate(461.4,219.5) rotate(310.5)" opacity="0.89"><path d="M 0 0 C -49.91909437029378 -25.918757652546727 -69.45265303693047 -89.27572080321652 0 -143.99309806970405 C 69.45265303693047 -89.27572080321652 49.91909437029378 -25.918757652546727 0 0 Z" fill="url(#gB)"/></g>
+<g transform="translate(452.0,215.2) rotate(369.1)" opacity="0.93"><path d="M 0 0 C -57.22936319848051 -29.31941689716182 -79.6234618413642 -100.9891026457796 0 -162.88564942867677 C 79.6234618413642 -100.9891026457796 57.22936319848051 -29.31941689716182 0 0 Z" fill="url(#gB)"/></g>
+<g transform="translate(453.2,203.3) rotate(438.6)" opacity="0.90"><path d="M 0 0 C -55.98245054405767 -25.6391478643941 -77.88862684390634 -88.31262042180191 0 -142.439710357745 C 77.88862684390634 -88.31262042180191 55.98245054405767 -25.6391478643941 0 0 Z" fill="url(#gB)"/></g>
+<g transform="translate(467.0,206.3) rotate(163.4)" opacity="0.95"><path d="M 0 0 C -46.77447491125725 -22.52129619094563 -63.04385748908587 -77.57335354659051 0 -125.11831217192018 C 63.04385748908587 -77.57335354659051 46.77447491125725 -22.52129619094563 0 0 Z" fill="url(#gA)"/></g>
+<g transform="translate(464.4,216.6) rotate(243.9)" opacity="0.89"><path d="M 0 0 C -43.60783695090707 -22.855396435335944 -58.77578023817911 -78.72414327726825 0 -126.97442464075525 C 58.77578023817911 -78.72414327726825 43.60783695090707 -22.855396435335944 0 0 Z" fill="url(#gA)"/></g>
+<g transform="translate(455.9,216.8) rotate(315.6)" opacity="0.95"><path d="M 0 0 C -42.190161614593286 -24.465386739815834 -56.86500043706052 -84.26966543714343 0 -135.91881522119908 C 56.86500043706052 -84.26966543714343 42.190161614593286 -24.465386739815834 0 0 Z" fill="url(#gA)"/></g>
+<g transform="translate(452.5,207.4) rotate(404.6)" opacity="0.91"><path d="M 0 0 C -46.517883502483876 -22.47574204600584 -62.69801689465219 -77.41644482513124 0 -124.86523358892134 C 62.69801689465219 -77.41644482513124 46.517883502483876 -22.47574204600584 0 0 Z" fill="url(#gA)"/></g>
+<g transform="translate(465.8,209.1) rotate(167.9)" opacity="0.91"><path d="M 0 0 C -36.22767557889094 -17.56138259199148 -45.67837355599293 -60.48920670574844 0 -97.5632366221749 C 45.67837355599293 -60.48920670574844 36.22767557889094 -17.56138259199148 0 0 Z" fill="url(#gC)"/></g>
+<g transform="translate(462.4,215.4) rotate(243.5)" opacity="0.90"><path d="M 0 0 C -32.112486948765074 -15.981389672251856 -40.48965745713858 -55.04700887108973 0 -88.78549817917698 C 40.48965745713858 -55.04700887108973 32.112486948765074 -15.981389672251856 0 0 Z" fill="url(#gC)"/></g>
+<g transform="translate(456.8,214.9) rotate(300.5)" opacity="0.95"><path d="M 0 0 C -34.364449680163965 -15.675355523149696 -43.32908872716326 -53.99289124640451 0 -87.08530846194276 C 43.32908872716326 -53.99289124640451 34.364449680163965 -15.675355523149696 0 0 Z" fill="url(#gC)"/></g>
+<g transform="translate(454.4,208.2) rotate(370.2)" opacity="0.95"><path d="M 0 0 C -34.60828712561117 -16.740791347860892 -43.636535940988 -57.662725753743075 0 -93.00439637700497 C 43.636535940988 -57.662725753743075 34.60828712561117 -16.740791347860892 0 0 Z" fill="url(#gC)"/></g>
+<g transform="translate(464.0,209.9) rotate(138.4)" opacity="0.96"><path d="M 0 0 C -25.41646960062029 -12.649739791147578 -29.836725183336867 -43.571325947286105 0 -70.2763321730421 C 29.836725183336867 -43.571325947286105 25.41646960062029 -12.649739791147578 0 0 Z" fill="url(#gB)"/></g>
+<g transform="translate(462.5,213.1) rotate(205.0)" opacity="0.98"><path d="M 0 0 C -23.56867018661682 -12.287819546881243 -27.667569349506707 -42.324711772590945 0 -68.26566414934024 C 27.667569349506707 -42.324711772590945 23.56867018661682 -12.287819546881243 0 0 Z" fill="url(#gB)"/></g>
+<g transform="translate(458.3,213.6) rotate(242.3)" opacity="0.94"><path d="M 0 0 C -23.70233336564081 -11.462704513978723 -27.824478298795736 -39.48264888148227 0 -63.681691744326244 C 27.824478298795736 -39.48264888148227 23.70233336564081 -11.462704513978723 0 0 Z" fill="url(#gB)"/></g>
+<g transform="translate(456.1,210.5) rotate(320.9)" opacity="0.90"><path d="M 0 0 C -19.916106944047435 -10.760441568457454 -23.37977771692525 -37.06374318024234 0 -59.78023093587475 C 23.37977771692525 -37.06374318024234 19.916106944047435 -10.760441568457454 0 0 Z" fill="url(#gB)"/></g>
+<g transform="translate(462.4,210.2) rotate(103.2)" opacity="0.93"><path d="M 0 0 C -16.849033060043915 -6.955264329763032 -18.753706362483662 -23.95702158029489 0 -38.6403573875724 C 18.753706362483662 -23.95702158029489 16.849033060043915 -6.955264329763032 0 0 Z" fill="url(#gD)"/></g>
+<g transform="translate(460.4,212.4) rotate(201.2)" opacity="0.91"><path d="M 0 0 C -16.630466260247967 -7.735279981083356 -18.510432011406436 -26.643742157064896 0 -42.973777672685316 C 18.510432011406436 -26.643742157064896 16.630466260247967 -7.735279981083356 0 0 Z" fill="url(#gD)"/></g>
+<g transform="translate(458.0,211.3) rotate(271.1)" opacity="0.90"><path d="M 0 0 C -16.902565283408126 -6.9042935258852935 -18.813290054576004 -23.781455478049345 0 -38.3571862549183 C 18.813290054576004 -23.781455478049345 16.902565283408126 -6.9042935258852935 0 0 Z" fill="url(#gD)"/></g>
+<g transform="translate(461.3,210.3) rotate(103.1)" opacity="0.95"><path d="M 0 0 C -7.8746314048718045 -3.6868808223731793 -8.217006683344492 -12.699256165952063 0 -20.482671235406553 C 8.217006683344492 -12.699256165952063 7.8746314048718045 -3.6868808223731793 0 0 Z" fill="url(#gC)"/></g>
+<g transform="translate(460.4,211.2) rotate(156.6)" opacity="0.95"><path d="M 0 0 C -8.306871664495608 -3.4883663472690674 -8.668039997734548 -12.0154840850379 0 -19.37981304038371 C 8.668039997734548 -12.0154840850379 8.306871664495608 -3.4883663472690674 0 0 Z" fill="url(#gC)"/></g>
+<g transform="translate(459.0,210.9) rotate(232.4)" opacity="0.96"><path d="M 0 0 C -8.531700674763576 -4.086358074096864 -8.902644182361993 -14.075233366333645 0 -22.701989300538138 C 8.902644182361993 -14.075233366333645 8.531700674763576 -4.086358074096864 0 0 Z" fill="url(#gC)"/></g>
   </g>
 
-  <!-- subtle vignette to seat the illustration -->
-  <rect x="0" y="0" width="900" height="1100" fill="url(#vign)"/>
+  <rect width="900" height="1100" fill="url(#vign)"/>
 </svg>
